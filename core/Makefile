@@ -1,13 +1,17 @@
 # Put some miscellaneous rules here
+#
+# Build system colors
+#
+# PFX: Prefix "target C++:" in yellow
+# INS: Module "Install:" output color (cyan for ics)
+
+ifneq ($(BUILD_WITH_COLORS),0)
+    include $(TOP_DIR)build/core/colors.mk
+endif
 
 # HACK: clear LOCAL_PATH from including last build target before calling
 # intermedites-dir-for
 LOCAL_PATH := $(BUILD_SYSTEM)
-
-# Build system colors
-ifneq ($(BUILD_WITH_COLORS),0)
-  CL_RED="\033[31m"
-endif
 
 # Pick a reasonable string to use to identify files.
 ifneq (,$(filter eng.%,$(BUILD_NUMBER)))
