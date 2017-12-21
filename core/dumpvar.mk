@@ -3,7 +3,7 @@
 print_build_config_vars := \
   PLATFORM_VERSION_CODENAME \
   PLATFORM_VERSION \
-  LINEAGE_VERSION \
+  FH_VERSION \
   TARGET_PRODUCT \
   TARGET_BUILD_VARIANT \
   TARGET_BUILD_TYPE \
@@ -124,8 +124,12 @@ endif
 endif # CALLED_FROM_SETUP
 
 ifneq ($(PRINT_BUILD_CONFIG),)
-$(info ============================================)
+$(info ==================================)
+$(info Fire Burns and Phoenix Hounds)
+$(info ==================================)
 $(foreach v, $(print_build_config_vars),\
   $(info $v=$($(v))))
-$(info ============================================)
+$(info ==================================)
+$(info And thus Begins FireHound)
+$(info ==================================)
 endif

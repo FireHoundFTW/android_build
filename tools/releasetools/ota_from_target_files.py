@@ -503,6 +503,31 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   if HasVendorPartition(input_zip):
     system_progress -= 0.1
 
+    script.Print("************************************************");
+    script.Print(" _____ _          _   _                       _ ");
+    script.Print("|  ___(_)_ __ ___| | | | ___  _   _ _ __   __| |");
+    script.Print("| |_  | | '__/ _ \ |_| |/ _ \| | | | '_ \ / _` |");
+    script.Print("|  _| | | | |  __/  _  | (_) | |_| | | | | (_| |");
+    script.Print("|_|   |_|_|  \___|_| |_|\___/ \__,_|_| |_|\__,_|");
+    script.Print("                                                ");
+    script.Print("************************************************");
+    script.Print("Burning Your Device With Fire");
+
+    build = GetBuildProp("ro.build.date", OPTIONS.info_dict)
+    sdk = GetBuildProp("ro.build.version.sdk", OPTIONS.info_dict)
+    type = GetBuildProp("ro.build.type", OPTIONS.info_dict)
+    id = GetBuildProp("ro.build.id", OPTIONS.info_dict)
+    patch = GetBuildProp("ro.build.version.security_patch", OPTIONS.info_dict)
+    script.Print("******************************************");
+    script.Print("***** FIRE BURNS AND PHOENIX HOUNDS *****");
+    script.Print("******************************************");
+    script.Print("      Compiled On: %s "%(build));
+    script.Print("      Android SDK: %s"%(sdk));
+    script.Print("      Build Type: %s"%(type));
+    script.Print("      Build Number: %s"%(id));
+    script.Print("      Security Patch: %s"%(patch));
+    script.Print("******************************************");
+
   # Place a copy of file_contexts.bin into the OTA package which will be used
   # by the recovery program.
   if "selinux_fc" in OPTIONS.info_dict:
