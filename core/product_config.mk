@@ -171,6 +171,7 @@ include $(BUILD_SYSTEM)/device.mk
 # A Lineage build needs only the Lineage product makefiles.
 ifneq ($(FH_BUILD),)
   all_product_configs := $(shell find device -path "*/$(FH_BUILD)/fh.mk")
+  all_product_configs += $(wildcard vendor/fh/build/target/product/lineage_$(FH_BUILD).mk)
 else
   ifneq ($(strip $(TARGET_BUILD_APPS)),)
   # An unbundled app build needs only the core product makefiles.
